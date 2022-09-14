@@ -1,5 +1,6 @@
-import NuevoPresupuesto from "./NuevoPresupuesto";
-import { useState } from "react";
+import NuevoPresupuesto from './NuevoPresupuesto';
+import { useState } from 'react';
+import ControlPresupuesto from './ControlPresupuesto';
 const Header = ({
   presupuesto,
   setPresupuesto,
@@ -10,7 +11,7 @@ const Header = ({
     <header>
       <h1>Planificador de Gastos</h1>
       {isValidPresupuesto ? (
-        <p>Control Presupuesto</p>
+        <ControlPresupuesto presupuesto={presupuesto} />
       ) : (
         <NuevoPresupuesto
           presupuesto={presupuesto}

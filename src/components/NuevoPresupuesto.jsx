@@ -1,18 +1,22 @@
-import { Children, useState } from "react";
-import Mensaje from "./Mensaje";
+import { Children, useState } from 'react';
+import Mensaje from './Mensaje';
 
-const NuevoPresupuesto = ({ presupuesto, setPresupuesto, setIsValidPresupuesto }) => {
-  const [mensaje, setMensaje] = useState("");
+const NuevoPresupuesto = ({
+  presupuesto,
+  setPresupuesto,
+  setIsValidPresupuesto,
+}) => {
+  const [mensaje, setMensaje] = useState('');
 
   const handlePresupuesto = (e) => {
     e.preventDefault();
 
     if (!presupuesto || presupuesto < 0) {
-      setMensaje("No es un presupuesto válido");
+      setMensaje('No es un presupuesto válido');
       return;
     }
-    setMensaje('')
-    setIsValidPresupuesto(true) 
+    setMensaje('');
+    setIsValidPresupuesto(true);
   };
   return (
     <div
