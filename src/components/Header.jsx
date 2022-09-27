@@ -1,6 +1,6 @@
-import NuevoPresupuesto from './NuevoPresupuesto';
-import { useState } from 'react';
-import ControlPresupuesto from './ControlPresupuesto';
+import NuevoPresupuesto from './NuevoPresupuesto'
+import { useState } from 'react'
+import ControlPresupuesto from './ControlPresupuesto'
 const Header = ({
   presupuesto,
   setPresupuesto,
@@ -20,7 +20,7 @@ const Header = ({
         />
       )}
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

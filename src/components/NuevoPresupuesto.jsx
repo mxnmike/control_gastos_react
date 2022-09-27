@@ -1,23 +1,23 @@
-import { Children, useState } from 'react';
-import Mensaje from './Mensaje';
+import { Children, useState } from 'react'
+import Mensaje from './Mensaje'
 
 const NuevoPresupuesto = ({
   presupuesto,
   setPresupuesto,
   setIsValidPresupuesto,
 }) => {
-  const [mensaje, setMensaje] = useState('');
+  const [mensaje, setMensaje] = useState('')
 
   const handlePresupuesto = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!presupuesto || presupuesto < 0) {
-      setMensaje('No es un presupuesto válido');
-      return;
+      setMensaje('No es un presupuesto válido')
+      return
     }
-    setMensaje('');
-    setIsValidPresupuesto(true);
-  };
+    setMensaje('')
+    setIsValidPresupuesto(true)
+  }
   return (
     <div
       onSubmit={handlePresupuesto}
@@ -38,7 +38,7 @@ const NuevoPresupuesto = ({
         {mensaje && <Mensaje tipo="error">{mensaje}</Mensaje>}
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default NuevoPresupuesto;
+export default NuevoPresupuesto
