@@ -3,6 +3,7 @@ import { useState } from 'react'
 import ControlPresupuesto from './ControlPresupuesto'
 const Header = ({
   gastos,
+  setGastos,
   presupuesto,
   setPresupuesto,
   isValidPresupuesto,
@@ -12,7 +13,13 @@ const Header = ({
     <header>
       <h1>Planificador de Gastos</h1>
       {isValidPresupuesto ? (
-        <ControlPresupuesto presupuesto={presupuesto} gastos={gastos} />
+        <ControlPresupuesto
+          gastos={gastos}
+          setGastos={setGastos}
+          presupuesto={presupuesto}
+          setPresupuesto={setPresupuesto}
+          setIsValidPresupuesto={setIsValidPresupuesto}
+        />
       ) : (
         <NuevoPresupuesto
           gastos={gastos}

@@ -8,6 +8,7 @@ const Modal = ({
   setAnimarModal,
   guardarGasto,
   gastoEditar,
+  setGastoEditar,
 }) => {
   const [mensaje, setMensaje] = useState('')
   const [nombre, setNombre] = useState('')
@@ -28,12 +29,13 @@ const Modal = ({
 
   const ocultarModal = () => {
     setAnimarModal(false)
+    setGastoEditar({})
     setTimeout(() => {
       setModal(false)
     }, 500)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
 
     if ([nombre, cantidad, categoria].includes('')) {
@@ -69,7 +71,7 @@ const Modal = ({
             type='text'
             placeholder='Añade el Nombre del Gasto'
             value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
+            onChange={e => setNombre(e.target.value)}
           />
         </div>
 
@@ -80,7 +82,7 @@ const Modal = ({
             type='number'
             placeholder='Añade la cantidad del gasto: ej: 200'
             value={cantidad}
-            onChange={(e) => setCantidad(Number(e.target.value))}
+            onChange={e => setCantidad(Number(e.target.value))}
           />
         </div>
 
@@ -89,7 +91,7 @@ const Modal = ({
           <select
             id='categoria'
             value={categoria}
-            onChange={(e) => setCategoria(e.target.value)}
+            onChange={e => setCategoria(e.target.value)}
           >
             <option value=''>-- seleccione --</option>
             <option value='ahorro'>Ahorro</option>
